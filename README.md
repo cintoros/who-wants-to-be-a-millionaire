@@ -17,7 +17,6 @@ Fragen kommen in einer zufälligen Reihenfolge.
 
 Ein Admin User verwaltet den Fragekatalog und kann Fragen erstellen, bearbeiten und löschen. 
 
-
 #### Zusätzliche Ideen, falls Zeit vorhanden:
  
 - Die richtige Lösung wird dem Moderator nicht sofort angezeigt, sondern kann nachträglich eingeblendet werden. 
@@ -34,8 +33,9 @@ Ein Admin User verwaltet den Fragekatalog und kann Fragen erstellen, bearbeiten 
 
 ## Project confirmation
 
-< to be filled by lecturer>
-
+Sie haben sich viel vorgenommen. Aber das ist eine tolle Idee und sie umzusetzen macht sicherlich Spass.
+Fangen Sie klein an und erweitern Sie das Spiel mit Zusatzfunktionen, falls die Zeit reicht. Sie dürfen anfangen.
+Viel Spass!
 
 ## Project delivery <to be filled by student>
 
