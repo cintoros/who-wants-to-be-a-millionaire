@@ -36,6 +36,7 @@ dependencies {
     compile "org.grails:grails-core"
     compile "org.springframework.boot:spring-boot-starter-actuator"
     compile "org.springframework.boot:spring-boot-starter-tomcat"
+    compile 'org.grails.plugins:spring-security-core:4.0.0'
     compile "org.grails:grails-web-boot"
     compile "org.grails:grails-logging"
     compile "org.grails:grails-plugin-rest"
@@ -59,6 +60,7 @@ dependencies {
     runtime "org.apache.tomcat:tomcat-jdbc"
     runtime "javax.xml.bind:jaxb-api:2.3.0"
     runtime "com.bertramlabs.plugins:asset-pipeline-grails:3.0.10"
+    runtime group: 'org.codehaus.groovy', name: 'groovy-dateutil', version: '2.5.8'
     testCompile "org.grails:grails-gorm-testing-support"
     testCompile "org.mockito:mockito-core"
     testCompile "org.grails:grails-web-testing-support"
