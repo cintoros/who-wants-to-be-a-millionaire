@@ -4,9 +4,7 @@ import grails.gorm.DetachedCriteria
 import groovy.transform.ToString
 
 import org.codehaus.groovy.util.HashCodeHelper
-import grails.compiler.GrailsCompileStatic
 
-@GrailsCompileStatic
 @ToString(cache=true, includeNames=true, includePackage=false)
 class UserRole implements Serializable {
 
@@ -50,7 +48,8 @@ class UserRole implements Serializable {
 	}
 
 	static UserRole create(User user, Role role, boolean flush = false) {
-		def instance = new UserRole(user: user, role: role)
+//		def instance = new UserRole(user: user, role: role)
+		def instance = UserRole.findOrCreateWhere(user: user, role: role)
 		instance.save(flush: flush)
 		instance
 	}
