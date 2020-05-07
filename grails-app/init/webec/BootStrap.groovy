@@ -10,12 +10,14 @@ class BootStrap {
         }
 
         Role adminRole = save(Role.findOrCreateWhere(authority: Role.ADMIN))
-        Role userRole = save(Role.findOrCreateWhere(authority: Role.USER))
+        Role playerRole = save(Role.findOrCreateWhere(authority: Role.PLAYER))
 
-        User user = save(new User(username: 'user', password: 'user'))
-        User admin = save(new User(username: 'admin', password: 'admin'))
+        // must use longer passwords due to configured password constrains.
+        // username cannot be user due to configured username constraints.
+        User player = save(new User(username: 'player', password: 'player123'))
+        User admin = save(new User(username: 'admin', password: 'admin123'))
 
-        UserRole.create(user, userRole, true)
+        UserRole.create(player, playerRole, true)
         UserRole.create(admin, adminRole, true)
 
         // plausibility check
