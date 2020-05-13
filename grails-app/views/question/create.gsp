@@ -25,25 +25,21 @@
     </div>
 
     <div class="card-body" role="main">
-        <g:if test="${flash.message}">
-            <div class="message" role="status">${flash.message}</div>
-        </g:if>
+
         <g:hasErrors bean="${this.question}">
-            <ul class="errors" role="alert">
                 <g:eachError bean="${this.question}" var="error">
-                    <li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message
-                            error="${error}"/></li>
+                    <div <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>>
+                        <div class="alert alert-danger alert-dismissible fade show" role="status"><g:message error="${error}"/></div>
+                    </div>
                 </g:eachError>
-            </ul>
         </g:hasErrors>
 
         <g:form resource="${this.question}" method="POST">
             <div class="form-group row">
                 <label class="col-lg-3 col-form-label form-control-label">Question Text</label>
-
                 <div class="col-lg-9">
                     <g:textField class="form-control" type="text" value="${this.question.questionText}"
-                                 name="questionText" />
+                                 name="questionText" required="required"/>
                 </div>
             </div>
 
@@ -51,8 +47,7 @@
                 <label class="col-lg-3 col-form-label form-control-label">Correct Answer</label>
 
                 <div class="col-lg-9">
-                    <g:textField class="form-control" type="text" value="${this.question.correct}" name="correct"
-                                 required="required"/>
+                    <g:textField class="form-control" type="text" value="${this.question.correct}" name="correct" required="required"/>
                 </div>
             </div>
 
