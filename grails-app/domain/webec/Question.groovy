@@ -8,7 +8,6 @@ class Question {
     String third
     String fourth
 
-
     String toString() {
         return "$questionText: correct: $correct other answers: ($second, $third, $fourth)"
     }
