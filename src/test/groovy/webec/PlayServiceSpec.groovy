@@ -1,0 +1,18 @@
+package webec
+
+import grails.testing.services.ServiceUnitTest
+import spock.lang.Specification
+
+class PlayServiceSpec extends Specification implements ServiceUnitTest<PlayService>{
+
+    def setup() {
+    }
+
+    def cleanup() {
+    }
+
+//    void "test something"() {
+//        expect:"fix me"
+//            true == false
+//    }
+}
