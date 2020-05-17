@@ -14,7 +14,7 @@ class QuestionService {
      * @param size the size of the questions set, default value: 15
      * @return a list of unique and random questions
      */
-    def uniqueQuestionSet(int size = 15) {
+    static def uniqueQuestionSet(int size = 15) {
         def questions = Question.all
         if (questions.size() < size) {
             Collections.shuffle(questions);
