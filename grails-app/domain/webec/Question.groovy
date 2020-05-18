@@ -9,7 +9,7 @@ class Question {
     String fourth
 
     String toString() {
-        return "$questionText: correct: $correct other answers: ($second, $third, $fourth)"
+        return "Question: $questionText: correct answer: $correct, other answers: ($second, $third, $fourth)"
     }
 
     static constraints = {
