@@ -7,17 +7,18 @@ function toggleVisibility(questionId) {
     x.classList.toggle('list-group-item-success');
 
     let y = document.getElementById("show-hide-button" + questionId);
-    if(y.innerHTML === "Show Answer") {
+    if (y.innerHTML === "Show Answer") {
         y.innerHTML = "Hide Answer"
-    }
-    else {
+    } else {
         y.innerHTML = "Show Answer"
     }
 }
 
+let jokerUsed = 'false';
 let answer = '';
+
 function callControllerWithSelectedAnswer() {
-  window.location = '/play?answer=' + answer
+    window.location = '/play?answer=' + answer + '&joker=' + jokerUsed
 }
 
 /**
@@ -33,9 +34,18 @@ function toggleSelectedAnswer(elementId) {
     const highlight = 'list-group-item-primary';
 
     document.getElementById(correct).classList.remove(highlight);
-    document.getElementById(wrong1).classList.remove(highlight);
-    document.getElementById(wrong2).classList.remove(highlight);
-    document.getElementById(wrong3).classList.remove(highlight);
+
+    if (document.getElementById(wrong1) !== null) {
+        document.getElementById(wrong1).classList.remove(highlight);
+    }
+
+    if (document.getElementById(wrong2) !== null) {
+        document.getElementById(wrong2).classList.remove(highlight);
+    }
+
+    if (document.getElementById(wrong3) !== null) {
+        document.getElementById(wrong3).classList.remove(highlight);
+    }
 
     let x = document.getElementById(elementId);
     x.classList.add(highlight);
@@ -43,14 +53,31 @@ function toggleSelectedAnswer(elementId) {
 }
 
 /**
+ * Removes two wrong answers.
+ * Used for the 50% joker.
+ *
+ * Sets jokerUser field to true.
+ *
+ * @param answer1 the answer to be removed
+ * @param answer2 the answer to be removed
+ */
+function removeTwoWrongAnswers(answer1, answer2) {
+    document.getElementById(answer1).remove();
+    document.getElementById(answer2).remove();
+    document.getElementById('joker').remove();
+
+    jokerUsed = 'true'
+}
+
+/**
  * Function to clear selected correct and wrong answers for a Moderator
  * @param questionId the question id
  */
 function clearQuestion(questionId) {
-    const correct = "correct-answer" + (questionId+1);
-    const wrong1 = "wrong-answer" + (questionId+1)  + questionId;
-    const wrong2 = "wrong-answer" + (questionId+1)  + (questionId+1);
-    const wrong3 = "wrong-answer" + (questionId+1)  + (questionId+2);
+    const correct = "correct-answer" + (questionId + 1);
+    const wrong1 = "wrong-answer" + (questionId + 1) + questionId;
+    const wrong2 = "wrong-answer" + (questionId + 1) + (questionId + 1);
+    const wrong3 = "wrong-answer" + (questionId + 1) + (questionId + 2);
 
     document.getElementById(correct).classList.remove('list-group-item-success');
     document.getElementById(wrong1).classList.remove('list-group-item-danger');
@@ -77,7 +104,7 @@ function shuffleQuestionAnswers(questionId) {
 /**
  * Shuffles all divs inside element id: shuffle
  */
-function shuffleQuestion(){
+function shuffleQuestion() {
     shuffle(document.querySelectorAll('#shuffle > div'));
 }
 
@@ -85,13 +112,15 @@ function shuffleQuestion(){
  * EXTERNAL: https://codepen.io/dimayakovlev/pen/VmxOYM
  */
 function shuffle(elems) {
-    allElems = (function(){
+    allElems = (function () {
         var ret = [], l = elems.length;
-        while (l--) { ret[ret.length] = elems[l]; }
+        while (l--) {
+            ret[ret.length] = elems[l];
+        }
         return ret;
     })();
 
-    var shuffled = (function(){
+    var shuffled = (function () {
         var l = allElems.length, ret = [];
         while (l--) {
             var random = Math.floor(Math.random() * allElems.length),
