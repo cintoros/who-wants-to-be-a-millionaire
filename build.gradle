@@ -39,6 +39,7 @@ dependencies {
     // automatically generates login
 //    compile 'org.grails.plugins:spring-security-core:4.0.0'
     compile "org.grails:grails-web-boot"
+    compile "org.apache.commons:commons-lang3:3.10"
     compile "org.grails:grails-logging"
     compile "org.grails:grails-plugin-rest"
     compile "org.grails:grails-plugin-databinding"

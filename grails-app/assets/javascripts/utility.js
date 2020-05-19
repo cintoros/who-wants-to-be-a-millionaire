@@ -15,6 +15,33 @@ function toggleVisibility(questionId) {
     }
 }
 
+let answer = '';
+function callControllerWithSelectedAnswer() {
+  window.location = '/play?answer=' + answer
+}
+
+/**
+ * Toggles the selected answer to be displayed and sets the answer field of this class
+ *  @param elementId the html id of the tag
+ */
+function toggleSelectedAnswer(elementId) {
+    const correct = "correct-answer";
+    const wrong1 = "wrong-answer1";
+    const wrong2 = "wrong-answer2";
+    const wrong3 = "wrong-answer3";
+
+    const highlight = 'list-group-item-primary';
+
+    document.getElementById(correct).classList.remove(highlight);
+    document.getElementById(wrong1).classList.remove(highlight);
+    document.getElementById(wrong2).classList.remove(highlight);
+    document.getElementById(wrong3).classList.remove(highlight);
+
+    let x = document.getElementById(elementId);
+    x.classList.add(highlight);
+    answer = x.innerText;
+}
+
 /**
  * Function to clear selected correct and wrong answers for a Moderator
  * @param questionId the question id
@@ -43,8 +70,15 @@ function markAsCorrectAnswer(questionId) {
  * Shuffles all question answers (must be a-tags) within the specified question id
  * @param questionId the question id
  */
-function shuffleQuestions(questionId) {
+function shuffleQuestionAnswers(questionId) {
     shuffle(document.querySelectorAll('#shuffle' + questionId + '> a'));
+}
+
+/**
+ * Shuffles all divs inside element id: shuffle
+ */
+function shuffleQuestion(){
+    shuffle(document.querySelectorAll('#shuffle > div'));
 }
 
 /**
