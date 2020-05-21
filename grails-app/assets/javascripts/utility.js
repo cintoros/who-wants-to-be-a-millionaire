@@ -3,14 +3,14 @@
  * @param questionId the question id
  */
 function toggleVisibility(questionId) {
-    let x = document.getElementById("correct-answer" + questionId);
-    x.classList.toggle('list-group-item-success');
+    let correctAnswer = document.getElementById("correct-answer" + questionId);
+    correctAnswer.classList.toggle('list-group-item-success');
 
-    let y = document.getElementById("show-hide-button" + questionId);
-    if (y.innerHTML === "Show Answer") {
-        y.innerHTML = "Hide Answer"
+    let showHideButton = document.getElementById("show-hide-button" + questionId);
+    if (showHideButton.innerHTML === "Show Answer") {
+        showHideButton.innerHTML = "Hide Answer"
     } else {
-        y.innerHTML = "Show Answer"
+        showHideButton.innerHTML = "Show Answer"
     }
 }
 
@@ -70,7 +70,10 @@ function removeTwoWrongAnswers(answer1, answer2) {
 }
 
 /**
- * Function to clear selected correct and wrong answers for a Moderator
+ * Function to clear selected correct and wrong answers for a Moderator.
+ *
+ * Renames Show/Hide Answer Button correctly.
+ *
  * @param questionId the question id
  */
 function clearQuestion(questionId) {
@@ -83,6 +86,11 @@ function clearQuestion(questionId) {
     document.getElementById(wrong1).classList.remove('list-group-item-danger');
     document.getElementById(wrong2).classList.remove('list-group-item-danger');
     document.getElementById(wrong3).classList.remove('list-group-item-danger');
+
+    let showHideButton = document.getElementById("show-hide-button" + (questionId+1));
+    if (showHideButton.innerHTML === "Hide Answer") {
+        showHideButton.innerHTML = "Show Answer";
+    }
 }
 
 function markAsWrongAnswer(questionId) {
