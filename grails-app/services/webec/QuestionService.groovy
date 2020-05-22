@@ -24,4 +24,12 @@ class QuestionService {
             questions.subList(0, size)
         }
     }
+
+    /**
+     * Returns all questions.
+     * @return all questions as list
+     */
+    static def all() {
+        Question.all
+    }
 }
