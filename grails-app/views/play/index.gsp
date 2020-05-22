@@ -14,15 +14,11 @@
 </head>
 
 <body>
-<h1 class="display-3">Play the game!</h1>
-<g:if test="${!game.isJokerUsed}">
-    <button id="joker" type="button" class="btn btn-warning" onclick="removeTwoWrongAnswers('wrong-answer1', 'wrong-answer2');">50/50 Joker</button>
-</g:if>
 
 <div class="col">
     <div id="shuffle">
-        <h3>${game.questions.get(game.current).questionText}</h3>
-
+        <h1 class="display-4">Play the game!</h1>
+        <h1>${game.current + 1}. Question: ${game.questions.get(game.current).questionText}</h1>
         <div id="correct-answer" class="card list-group-item-action col"
              onclick="toggleSelectedAnswer('correct-answer')">
             <div class="card-body">
@@ -51,6 +47,10 @@
 
 
     <div class="card list-group-item-action">
+        <g:if test="${!game.isJokerUsed}">
+            <button id="joker" type="button" class="btn btn-warning"
+                    onclick="removeTwoWrongAnswers('wrong-answer1', 'wrong-answer2');">50/50 Joker</button>
+        </g:if>
         <button type="button" class="btn btn-success" onclick="callControllerWithSelectedAnswer()">Confirm</button>
     </div>
 
