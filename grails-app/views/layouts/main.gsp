@@ -10,55 +10,49 @@
     <asset:link rel="icon" href="favicon.ico" type="image/x-ico"/>
 
     <asset:stylesheet src="application.css"/>
+    <asset:stylesheet src="millionaire.css"/>
+    <asset:javascript src="application.js"/>
 
     <g:layoutHead/>
 </head>
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark navbar-static-top" role="navigation">
-    <a class="navbar-brand" href="/#"><asset:image src="grails.svg" alt="Grails Logo"/></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Who Wants to Be a Millionaire?</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" aria-expanded="false" style="height: 0.8px;" id="navbarContent">
-        <ul class="nav navbar-nav ml-auto">
-            <g:pageProperty name="page.nav"/>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/play">Play    <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/play/moderator">Be the Moderator</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/question">Question Editor</a>
+            </li>
+
             <sec:ifLoggedIn>
-                <li class="dropdown">
-                    <a href="#"
-                       class="dropdown-toggle"
-                       data-toggle="dropdown"
-                       role="button"
-                       aria-haspopup="true"
-                       aria-expanded="false">
-                        Logged in as <sec:username/>
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Profile</a></li>
-                        <li><g:link controller="logout">Logout</g:link></li>
-                    </ul>
+                <li class="nav-item">
+                    <g:link class="nav-link" controller="logout">Logout</g:link>
                 </li>
             </sec:ifLoggedIn>
+            <sec:ifNotLoggedIn>
+                <li class="nav-item">
+                    <g:link class="nav-link" controller="login">Login</g:link>
+                </li>
+            </sec:ifNotLoggedIn>
         </ul>
     </div>
-
 </nav>
 
-<g:layoutBody/>
-
-<div class="footer row" role="contentinfo">
-    <h1>TODO Add Footer here!</h1>
-</div>
-
-
-<div id="spinner" class="spinner" style="display:none;">
-    <g:message code="spinner.alt" default="Loading&hellip;"/>
-</div>
-
-<asset:javascript src="application.js"/>
-
+<main class="container" role="main">
+    <g:layoutBody/>
+</main>
 </body>
 </html>
