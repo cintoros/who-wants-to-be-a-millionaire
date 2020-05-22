@@ -21,7 +21,7 @@
 %{--EXTERNAL: form layouting from this example: https://www.codeply.com/p/xjn4SoQjD6--}%
 <div class="card card-outline-secondary">
     <div class="card-header">
-        <h3 class="mb-0">Create a Question</h3>
+        <h3 class="mb-1">Create a Question</h3>
     </div>
 
     <div class="card-body" role="main">
@@ -33,6 +33,10 @@
                     </div>
                 </g:eachError>
         </g:hasErrors>
+
+        <g:if test="${flash.message}">
+            <div class="message" role="status">${flash.message}</div>
+        </g:if>
 
         <g:form resource="${this.question}" method="POST">
             <div class="form-group row">
