@@ -6,9 +6,9 @@ import org.apache.commons.lang.StringEscapeUtils
 class PlayController {
     def playService
     def questionService
-    String hello = "HELLOOO"
-    int counter = 0
     Game game;
+    Question lastQuestion;
+
 
     def index() {
 
@@ -49,7 +49,14 @@ class PlayController {
         if (answer == null || answer.isEmpty()) {
             game = new Game(current: 0, questions: questionService.uniqueQuestionSet(3), isFinished: false);
         } else {
-            def correct = game.questions[game.current].correct
+            def currentQuestion = game.questions[game.current]
+//            if(currentQuestion == null || currentQuestion.correct == null) {
+            if(currentQuestion == lastQuestion) {
+                // user cheated by pressing back button!
+                // TODO display cheat message
+                render(view: 'cheat')
+            }
+            def correct = currentQuestion.correct
             if(!game.isJokerUsed && joker == "true") {
                 game.isJokerUsed = true;
             }
@@ -61,6 +68,7 @@ class PlayController {
             } else {
                 render(view: 'lost')
             }
+            lastQuestion = currentQuestion;
         }
 
         [game: game]
