@@ -10,7 +10,7 @@
 <head>
     <meta name="layout" content="main"/>
     <asset:javascript src="utility.js"/>
-    <title>Play as Moderator</title>
+    <title>Be the Moderator</title>
 </head>
 
 <body>
@@ -20,24 +20,34 @@
 <div class="card">
     <div class="card-body">
         <g:each status="i" var="question" in="${questions}">
-            <h1 class="card-text">Question ${i+1}: ${question.questionText}</h1>
-            <div id="shuffle${i+1}" class="card-text list-group">
-                <div id="correct-answer${i+1}" onclick="markAsCorrectAnswer(${i+1})" class="list-group-item list-group-item-action">${question.correct}</div>
-                <div id="wrong-answer${i+1}${i}" onclick="markAsWrongAnswer(${i+1}${i})" class="list-group-item list-group-item-action">${question.second}</div>
-                <div id="wrong-answer${i+1}${i+1}" onclick="markAsWrongAnswer(${i+1}${i+1})" class="list-group-item list-group-item-action">${question.third}</div>
-                <div id="wrong-answer${i+1}${i+2}" onclick="markAsWrongAnswer(${i+1}${i+2})" class="list-group-item list-group-item-action">${question.fourth}</div>
+            <h1 class="card-text">Question ${i + 1}: ${question.questionText}</h1>
+
+            <div id="shuffle${i + 1}" class="mt-3 card-text list-group">
+                <div id="correct-answer${i + 1}" onclick="markAsCorrectAnswer(${i+1})"
+                     class="list-group-item list-group-item-action">${question.correct}</div>
+
+                <div id="wrong-answer${i + 1}${i}" onclick="markAsWrongAnswer(${i+1}${i})"
+                     class="list-group-item list-group-item-action">${question.second}</div>
+
+                <div id="wrong-answer${i + 1}${i + 1}" onclick="markAsWrongAnswer(${i+1}${i+1})"
+                     class="list-group-item list-group-item-action">${question.third}</div>
+
+                <div id="wrong-answer${i + 1}${i + 2}" onclick="markAsWrongAnswer(${i+1}${i+2})"
+                     class="list-group-item list-group-item-action">${question.fourth}</div>
             </div>
-            <button onclick="toggleVisibility(${i+1})" id="show-hide-button${i+1}" class="btn-primary">Show Answer</button>
-            <button onclick="clearQuestion(${i})" id="show-hide-button${i+1}" class="btn-secondary">Clear Question</button>
-            <br />
-            <br />
+
+            <button onclick="toggleVisibility(${i+1})" id="show-hide-button${i + 1}"
+                    class="mt-3 btn-primary">Show Answer</button>
+            <button onclick="clearQuestion(${i})" id="show-hide-button${i + 1}"
+                    class="btn-secondary">Clear Question</button>
+            <br/>
+            <br/>
             <script>
                 shuffleQuestionAnswers(${i+1})
             </script>
         </g:each>
     </div>
 </div>
-
 
 </body>
 </html>
