@@ -184,16 +184,6 @@
         #right .box li {
             margin-top: 5px;
         }
-
-
-        /**** Clear Div ***/
-        #clear {
-            display: block;
-            clear: both;
-            width: 100%;
-            height: 1px;
-            overflow: hidden;
-        }
     </style>
 </head>
 <body>
@@ -204,25 +194,68 @@
     <div id="content">
         <div id="left">
             <h2>Welcome to Who wants to be a Millionaire</h2>
+            <p>Herzlich Willkommen zu Wer Wird Millionaire!</p>
+
+            <h3>Projektarbeit bei der FHNW</h3>
             <p>
-                Simply dummy text of the printing and type setting industry. Lorem Ipsum has been the industry's
-                standard
-                dummy text ever since the 1500s, when an unknown printer took a galley of type specimen book.
+                Dies ist eine Projektarbeit im Rahmen des Moduls: Web Engineering.
+                Ich durfte eine eigene Projektidee einreichen, die ich mit Grails 4 umsetzen sollte.
             </p>
+            <p>
+                Wie dem Titel zu entnehmen ist, habe ich mich, von der Allgemeinen Idee her, an ein Wer Wird Millionär
+                Spiel angelehnt.
+            </p>
+            <p>Mehr zum Projekt ist in den fortfolgenden Kapiteln zu entnehmen.</p>
+
+            <h3>Rahmenbedingungen</h3>
+            <p>
+                Die Wahl der Frontend Technologie war uns freigestellt und ist ideal in "Grails Profilen" gegossen.
+                Ich habe mich fürs Standard Web-Profil entschieden,
+                welches mit Groovy Server Pages, kurz gsp arbeitet.
+            </p>
+
+            <p>Andere Profile wie React, Angular und viele weitere wären denkbar gewesen.</p>
+            <h3>Anleitung</h3>
+            <p>basdbasdabd</p>
+
+            <h3>Implemented Features</h3>
             <ul>
-                <li>Survived not only five centuries.</li>
-                <li>Leap into electronic typesetting.</li>
-                <li>Remaining essentially unchanged.</li>
-                <li>Popularised in the 1960s.</li>
-                <li>Release of Letraset sheets.</li>
+                <li>Game: Play the Game and get through 15 random questions</li>
+                <li>Game: Load a default set of questions from JSON</li>
+                <li>
+                    Game: Be the moderator!
+                    This functionality allows every player/admin to be the quiz moderator, in
+                    order to play with the family on one screen (e.g. connected to the house tv).
+                </li>
+                <li>
+                    Questions: create, update and delete questions (admin only)
+                </li>
+                <li>Login / Logout as a player (default username: player password: player123)</li>
+                <li>Login / Logout as an admin (default username: admin password: admin123)</li>
+                <li>Security: Password rule constraints</li>
+                <li>Security: Passwords are hashed in the db.</li>
+                <li>Security Role: Admin can create, update and delete questions</li>
+                <li>Security Role: Player <b>cannot</b> create, update and delete questions</li>
+                <li>Security Role: Admin can play the game normally</li>
+                <li>Security Role: Player can play the game normally</li>
+                <li>Security Role: Admin can be the moderator</li>
+                <li>Security Role: Player can be the moderator</li>
             </ul>
             <h2>Darauf bin ich stolz</h2>
             <p>
-                There are many variations of passages of Lorem available, but the majority have suffered alteration in
-                some form, by injected humour, or <a href="http://all-free-download.com/free-website-templates/">randomised
-                words</a> which don't look even slightly believable. If you are going to use a passage of Lorem
-                Ipsum, you need to be sure.
+                Lorem Ipsum dolor sit amet
             </p>
+            <ul>
+                <li>Lorem Ipsum dolor sit amet</li>
+                <li>Lorem Ipsum dolor sit amet</li>
+            </ul>
+
+            <h3>Future Ideas</h3>
+            <ul>
+                <li>Lorem Ipsum dolor sit amet</li>
+                <li>Lorem Ipsum dolor sit amet</li>
+            </ul>
+
         </div>
         <div id="right">
             <div class="box">
