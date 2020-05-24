@@ -1,3 +1,4 @@
+<%@ page import="org.springframework.validation.FieldError" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,8 +8,6 @@
 </head>
 
 <body>
-<a href="#create-question" class="skip" tabindex="-1"><g:message code="default.link.skip.label"
-                                                                 default="Skip to content&hellip;"/></a>
 
 <div class="nav" role="navigation">
     <ul>
@@ -28,7 +27,7 @@
 
         <g:hasErrors bean="${this.question}">
                 <g:eachError bean="${this.question}" var="error">
-                    <div <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>>
+                    <div <g:if test="${error in FieldError}">data-field-id="${error.field}"</g:if>>
                         <div class="alert alert-danger alert-dismissible fade show" role="status"><g:message error="${error}"/></div>
                     </div>
                 </g:eachError>

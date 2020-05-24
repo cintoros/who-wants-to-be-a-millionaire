@@ -8,8 +8,6 @@
 </head>
 
 <body>
-<a href="#show-question" class="skip" tabindex="-1"><g:message code="default.link.skip.label"
-                                                               default="Skip to content&hellip;"/></a>
 
 <div class="nav navbar" role="navigation">
     <ul>
@@ -95,6 +93,7 @@
                                     onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');"/>
                     <g:link class="edit btn btn-secondary" action="edit" resource="${this.question}"><g:message
                             code="default.button.edit.label" default="Edit"/></g:link>
+                    <a class="btn btn-outline-info" href="/question">Back</a>
                 </div>
             </div>
         </g:form>

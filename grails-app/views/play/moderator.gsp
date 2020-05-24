@@ -36,10 +36,10 @@
                      class="list-group-item list-group-item-action">${question.fourth}</div>
             </div>
 
-            <button onclick="toggleVisibility(${i+1})" id="show-hide-button${i + 1}"
-                    class="mt-3 btn-primary">Show Answer</button>
-            <button onclick="clearQuestion(${i})" id="show-hide-button${i + 1}"
-                    class="btn-secondary">Clear Question</button>
+            <button onclick="toggleVisibility(${i+1})" id="show-hide-button${i + 1}" class="mt-3 btn-primary">
+                Show Answer
+            </button>
+            <button onclick="clearQuestion(${i})" class="btn-secondary">Clear Question</button>
             <br/>
             <br/>
             <script>
