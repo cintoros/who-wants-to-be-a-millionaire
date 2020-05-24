@@ -34,7 +34,7 @@ management:
     endpoints:
         enabled-by-default: false
 server:
-    port: 8095
+    port: 9876
 ---
 grails:
     mime:
