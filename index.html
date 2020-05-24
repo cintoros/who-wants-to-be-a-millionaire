@@ -182,6 +182,7 @@
         <div id="left">
             <h2>Welcome to Who wants to be a Millionaire</h2>
             <p>Herzlich Willkommen zu Wer Wird Millionaire!</p>
+            <h3><a href="http://localhost:9876">Hier geht's zum Spiel</a></h3>
 
             <h3>Projektarbeit bei der FHNW</h3>
             <p>
@@ -202,8 +203,32 @@
             </p>
 
             <p>Andere Profile wie React, Angular und viele weitere wären denkbar gewesen.</p>
+
+            <h3>Zeit</h3>
+            <p>
+                Es hat enorm viel Spass gemacht an diesem Projekt zu arbeiten! Auch wenn ich weit mehr als 40 Stunden
+                darin investiert habe, konnte ich ein tolles Framework ausprobieren und gleichzeitig die
+                Programmiersprache Groovy kennenlernen. Das ist wertvolle Erfahrung, die ich auch Zukunft gut einsetzen
+                werden kann.
+            </p>
+
             <h3>Anleitung</h3>
-            <p>basdbasdabd</p>
+
+            <p>Untenstehend sind die wichtigsten Applikationslinks aufgeführt.</p>
+
+            <ul>
+                <li>/play - Play the Game. Der Klassiker. Spielen sie durch 15 knifflige Fragen allerhand Themengebieten
+                    durch und werden Sie zum Quizkönig.
+                </li>
+                <li>
+                    /moderator - Be the Moderator, show/hide correct answers and clear questions. Wollen Sie sich einen
+                    gemütlichen Spieleabend in der Familie machen? Schliessen Sie dafür ihr Endgerät beispielsweise an
+                    einen Fernseher an und fühlen Sie sich wie Günther Jauch. Diskutieren Sie die Fragen aus, zeigen Sie
+                    die richtigen und falschen Antworten an. Alles in Ihrem Tempo.
+                </li>
+                <li>/login - Login/Logout as a player / admin</li>
+                <li>/question - Create, Retrieve, Update and Delete Questions as an admin</li>
+            </ul>
 
             <h3>Implemented Features</h3>
             <ul>
@@ -230,19 +255,37 @@
             </ul>
             <h2>Darauf bin ich stolz</h2>
             <p>
-                Lorem Ipsum dolor sit amet
+                Ich möchte auf ein paar Punkte hinweisen, auf die ich Realisierungstechnisch gut umgesetzt habe.
             </p>
             <ul>
-                <li>Lorem Ipsum dolor sit amet</li>
-                <li>Lorem Ipsum dolor sit amet</li>
+                <li>
+                    Wer Wird Millionär Logo auf der Startseite mit Zoom-Animation. Tatsächlich hat das viel Zeit in
+                    Anspruch genommen. Das hat sich aber gelohnt, weil die Seite damit weniger statisch wirkt.
+                </li>
+                <li>
+                    <b>Design und Layout</b> im Allgemeinen ist sehr gelungen. Bootstrap 4 zieht sich durch die
+                    Applikation und verleiht ihr einen einheitlichen und stabilen Touch.
+                </li>
+                <li>
+                    <b>50/50 Joker</b> ist im Spiel-Modus verfügbar und kann pro Spiel nur einmal eingesetzt werden.
+                </li>
+                <li>
+                    <b>Dynamische Buttonnamen</b> in Moderator Ansicht: Button wechselt von "Show Answer" zu "Hide
+                    Answer" bei
+                    Click. "Clear Answer" setzt den Button ebenfalls zurück zu "Show Answer". Ich habe bei diesem
+                    Feature viel mit Javascript experimentiert und kam auf zufriedenstellende Ergebnisse.
+                </li>
+                <li>
+                    Über ein <b>JSON-API</b> sind Fragen dynamisch ladbar und Benutzer können direkt bei Startup
+                    losspielen!
+                </li>
             </ul>
 
             <h3>Future Ideas</h3>
             <ul>
-                <li>Lorem Ipsum dolor sit amet</li>
-                <li>Lorem Ipsum dolor sit amet</li>
+                <li>Highscore Table: Who went the furthest? Who was the fastest during game time?</li>
+                <li>Create users.</li>
             </ul>
-
         </div>
     </div>
 </div>
