@@ -42,8 +42,7 @@ class PlayController {
     }
 
     private Game newGame() {
-        // FIXME change  15
-        new Game(current: 0, questions: questionService.uniqueQuestionSet(3), isFinished: false)
+        new Game(current: 0, questions: questionService.uniqueQuestionSet(), isFinished: false)
     }
 
     def moderator() {
