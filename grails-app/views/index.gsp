@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta name="layout" content="main"/>
-    <title>Who wants to be a Millionaire</title>
+    <title>Who wants to be a Millionaire?</title>
 
     <asset:stylesheet src="millionaire.css"/>
 </head>
@@ -17,8 +17,7 @@
             <div class="img-hover" title="Play the Game!">
                 <a href="/play">
                     <asset:image class="img-responsive img-rounded" alt="Millionaire Logo"
-                                 src="millionaire/millionaire.png" height="250px"
-                                 width="250px"/>
+                                 src="millionaire/millionaire.png" height="250" width="250"/>
                 </a>
             </div>
             <sec:ifLoggedIn>
