@@ -7,8 +7,6 @@
 </head>
 
 <body>
-<a href="#list-question" class="skip" tabindex="-1"><g:message code="default.link.skip.label"
-                                                               default="Skip to content&hellip;"/></a>
 
 <div class="nav navbar" role="navigation">
     <ul>
@@ -24,47 +22,58 @@
 <table class="table table-striped table-hover">
     <thead>
     <tr>
-        <th>Question Text</th>
-        <th>Correct</th>
-        <th>Second Answer</th>
-        <th>Third Answer</th>
-        <th>Fourth Answer</th>
-        <th>Action</th>
+        <th style="max-width: 6rem">Question Text</th>
+        <th style="max-width: 6rem">Correct</th>
+        <th style="max-width: 6rem">Second Answer</th>
+        <th style="max-width: 6rem">Third Answer</th>
+        <th style="max-width: 6rem">Fourth Answer</th>
+        <th style="max-width: 6rem">Action</th>
     </tr>
     </thead>
     <tbody>
     <g:each status="i" var="question" in="${questions}">
         <tr>
             <td>
-                %{-- TODO change max-width?--}%
-                <div class="d-inline-block text-truncate" style="max-width: 40rem">
+                <div class="d-inline-block text-truncate" style="max-width: 20rem">
                     <a class="btn btn-link btn-sm" href="/question/show/${question.id}">
                         #${question.id} ${question.questionText}
                     </a>
                 </div>
             </td>
-            <td>${question.correct}</td>
-            <td>${question.second}</td>
-            <td>${question.third}</td>
-            <td>${question.fourth}</td>
             <td>
-                <g:form resource="${question}" method="DELETE">
+                <div class="d-inline-block text-truncate" style="min-width: 3rem; max-width: 8.5rem">
+                    ${question.correct}
+                </div>
+            </td>
+            <td>
+                <div class="d-inline-block text-truncate" style="min-width: 3rem; max-width: 8.5rem">
+                    ${question.second}
+                </div>
+            </td>
+            <td>
+                <div class="d-inline-block text-truncate" style="min-width: 3rem; max-width: 8.5rem">
+                    ${question.third}
+                </div>
+            </td>
+            <td>
+                <div class="d-inline-block text-truncate" style="min-width: 5rem; max-width: 8.5rem">
+                    ${question.fourth}
+                </div>
+            </td>
+            <td>
+
+                <form method="post" action="/question/delete/${question.id}">
                     <a class="btn btn-outline-info btn-sm" href="/question/show/${question.id}">Show</a>
                     <a class="btn btn-outline-info btn-sm" href="/question/edit/${question.id}">Edit</a>
 
-                    <g:submitButton class="save btn btn-outline-danger btn-sm" name="delete"
-                                    value="${message(code: 'default.button.delete.label', default: 'Delete')}"
-                                    onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');"/>
-                </g:form>
+                    <input type="hidden" name="_method" value="DELETE" id="_method${i}"/>
+                    <input type="submit" class="save btn btn-outline-danger btn-sm" name="delete${i}" value="Delete"
+                           onclick="return confirm('Are you sure?');" id="delete${i}"/>
+                </form>
             </td>
         </tr>
     </g:each>
     </tbody>
 </table>
-
-
-%{--<div class="pagination">--}%
-%{--    <g:paginate total="${questionCount ?: 0}"/>--}%
-%{--</div>--}%
 </body>
 </html>
