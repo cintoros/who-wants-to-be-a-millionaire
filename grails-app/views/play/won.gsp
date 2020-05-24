@@ -29,10 +29,6 @@
                                  width="250"/>
                 </a>
             </div>
-            <sec:ifLoggedIn>
-                <h1 class="display-4">Hello <sec:username/></h1>
-            </sec:ifLoggedIn>
-
         </div>
     </div>
 </div>

@@ -12,7 +12,7 @@
 <div id="container" role="main">
     <div class="row">
         <div class="justify-content-center text-center">
-            <h1 class="display-2">Who wants to be a Millionaire?</h1>
+            <h1 class="display-2">Who Wants to Be a Millionaire?</h1>
 
             <div class="img-hover" title="Play the Game!">
                 <a href="/play">
