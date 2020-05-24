@@ -50,6 +50,9 @@ I'm particular proud of:
 ## This is what I'm proud of
 I would like to point out a few points that I have implemented well in terms of implementation.
             
+#### Anti Cheat Detection 
+If a player looses the game, presses the back button to "reanswer" his question, the anti cheat detection get's triggered and the game is aborted.
+
 #### Zoom Logo
 Who wants to be a millionaire logo on the home page has an "on hover" zoom animation. 
 Actually this has taken a lot of time, but it was worth it, because the page looks less static now.
@@ -73,6 +76,11 @@ I have experimented a lot with Javascript for these features and came up with ve
             
 #### Initial Question Catalogue
 Via a JSON-API questions can be loaded dynamically and users can directly open the app and play!
+
+#### Valid HTML and CSS
+Every HTML and CSS page has been validated with "https://validator.w3.org/nu/" and contains no errors anymore. 
+The moderator view was the most difficult view to provide without errors.
+            
             
 
 ## Project grading 
