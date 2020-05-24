@@ -180,53 +180,50 @@
     </div>
     <div id="content">
         <div id="left">
-            <h2>Welcome to Who wants to be a Millionaire</h2>
-            <p>Herzlich Willkommen zu Wer Wird Millionaire!</p>
-            <h3><a href="http://localhost:9876">Hier geht's zum Spiel</a></h3>
+            <h2>Welcome to Who Wants to be a Millionaire!</h2>
+            <h3><a href="http://localhost:9876">Click here to go to the game</a></h3>
 
-            <h3>Projektarbeit bei der FHNW</h3>
+            <h3>Project work at the University of Applied Sciences FHNW</h3>
             <p>
-                Dies ist eine Projektarbeit im Rahmen des Moduls: Web Engineering.
-                Ich durfte eine eigene Projektidee einreichen, die ich mit Grails 4 umsetzen sollte.
+                This is a project work within the module: Web Engineering. I was allowed to submit an own project idea,
+                which I should implement with Grails 4.
             </p>
             <p>
-                Wie dem Titel zu entnehmen ist, habe ich mich, von der Allgemeinen Idee her, an ein Wer Wird Millionär
-                Spiel angelehnt.
+                As you can see from the title, the general idea was based on a "Who Wants to be a Millionaire" game.
             </p>
-            <p>Mehr zum Projekt ist in den fortfolgenden Kapiteln zu entnehmen.</p>
+            <p>More about the project can be found in the following chapters.</p>
 
-            <h3>Rahmenbedingungen</h3>
+            <h3>General conditions</h3>
             <p>
-                Die Wahl der Frontend Technologie war uns freigestellt und ist ideal in "Grails Profilen" gegossen.
-                Ich habe mich fürs Standard Web-Profil entschieden,
-                welches mit Groovy Server Pages, kurz gsp arbeitet.
+                The choice of front-end technology was up to us and is ideally cast in "Grails profiles".
+                I have chosen the standard web profile, which works with Groovy Server Pages, short gsp.
             </p>
 
-            <p>Andere Profile wie React, Angular und viele weitere wären denkbar gewesen.</p>
+            <p>Other profiles like React, Angular and many more would have been possible.</p>
 
-            <h3>Zeit</h3>
+            <h3>Time</h3>
             <p>
-                Es hat enorm viel Spass gemacht an diesem Projekt zu arbeiten! Auch wenn ich weit mehr als 40 Stunden
-                darin investiert habe, konnte ich ein tolles Framework ausprobieren und gleichzeitig die
-                Programmiersprache Groovy kennenlernen. Das ist wertvolle Erfahrung, die ich auch Zukunft gut einsetzen
-                werden kann.
+                It was a lot of fun to work on this project! Even though I spent far more than 40 hours
+                invested in it, I could try out a great framework and at the same time
+                Get to know the programming language Groovy. This is valuable experience, which I will use well in the
+                future can be.
             </p>
 
-            <h3>Anleitung</h3>
+            <h3>Instruction</h3>
 
-            <p>Untenstehend sind die wichtigsten Applikationslinks aufgeführt.</p>
+            <p>The most important application links are listed below.</p>
 
             <ul>
                 <li>/play - Play the Game. Der Klassiker. Spielen sie durch 15 knifflige Fragen allerhand Themengebieten
                     durch und werden Sie zum Quizkönig.
                 </li>
                 <li>
-                    /moderator - Be the Moderator, show/hide correct answers and clear questions. Wollen Sie sich einen
-                    gemütlichen Spieleabend in der Familie machen? Schliessen Sie dafür ihr Endgerät beispielsweise an
-                    einen Fernseher an und fühlen Sie sich wie Günther Jauch. Diskutieren Sie die Fragen aus, zeigen Sie
-                    die richtigen und falschen Antworten an. Alles in Ihrem Tempo.
+                    /moderator - Be the Moderator, show/hide correct answers and clear questions.
+                    Do you want to have a cozy game night with the family? Then connect your end device to a TV
+                    and feel like Günther Jauch. Discuss the questions, display
+                    the right and wrong answers. Fun is guaranteed and everything can be played at your pace.
                 </li>
-                <li>/login - Login/Logout as a player / admin</li>
+                <li>/login - Login / Logout as a player / admin</li>
                 <li>/question - Create, Retrieve, Update and Delete Questions as an admin</li>
             </ul>
 
@@ -253,40 +250,40 @@
                 <li>Security Role: Admin can be the moderator</li>
                 <li>Security Role: Player can be the moderator</li>
             </ul>
-            <h2>Darauf bin ich stolz</h2>
+            <h2>This is what I'm proud of</h2>
             <p>
-                Ich möchte auf ein paar Punkte hinweisen, auf die ich Realisierungstechnisch gut umgesetzt habe.
+                I would like to point out a few points that I have implemented well in terms of implementation.
             </p>
             <h4>Zoom Logo</h4>
             <p>
-                Wer Wird Millionär Logo auf der Startseite hat eine "onhover" Zoom-Animation. Tatsächlich hat das viel
-                Zeit in
-                Anspruch genommen. Das hat sich aber gelohnt, weil die Seite damit weniger statisch wirkt.
+                Who wants to be a millionaire logo on the home page has an "on hover" zoom animation.
+                Actually this has taken a lot of time, but it was worth it, because the page looks less static now.
             </p>
 
-            <h4>Design und Layout</h4>
+            <h4>Design and layout</h4>
             <p>
-                Design und Layout im Allgemeinen ist sehr gelungen. Bootstrap 4 zieht sich durch die
-                Applikation und verleiht ihr einen einheitlichen und stabilen Touch.
+                Design and layout in general is very well done. Bootstrap 4 runs through the
+                application and gives it a uniform and stable touch.
             </p>
 
-            <h4>50/50 Joker</h4>
+            <h4>50/50 wild cards</h4>
             <p>
-                Der 50/50 Joker ist im Spiel-Modus verfügbar und kann pro Spiel nur einmal eingesetzt werden. Dabei
-                werden zwei falschen Antworten aus der aktuellen Fragen eliminiert.
+                The 50/50 Joker is available in game mode and can only be used once per game. Thereby
+                two wrong answers are eliminated from the current questions.
             </p>
 
-            <h4>Responsive Website</h4>
+            <h4>Responsive website</h4>
             <p>
-                Die Webseite im Allgemeinen ist dynamisch: Der 50/50 Joker verschwindet, sobald er eingesetzt wurde.
-                Ausserdem sind dynamische Buttonnamen in der Moderator Ansicht verfügbar. Der Button wechselt von "Show
-                Answer" zu "Hide Answer", sobald er geklickt wurde. "Clear Answer" setzt den Button
-                ebenfalls immer zurück zu "Show Answer".
-                Ich habe bei diesen Features viel mit Javascript experimentiert und kam auf seht gute Ergebnisse.
+                The website in general is dynamic: the 50/50 joker disappears as soon as it is played.
+                Dynamic button names are also available in the moderator view. The button changes from "Show
+                Answer" to "Hide Answer" as soon as it is clicked. "Clear Answer" sets the button
+                always go back to "Show Answer" as well.
+                I have experimented a lot with Javascript for these features and came up with very good results.
             </p>
+
+            <h4>Initial Question Catalogue</h4>
             <p>
-                Über ein <b>JSON-API</b> sind Fragen dynamisch ladbar und Benutzer können direkt bei Startup
-                losspielen!
+                Via a <b>JSON-API</b> questions can be loaded dynamically and users can directly open the app and play!
             </p>
 
             <h3>Future Ideas</h3>
