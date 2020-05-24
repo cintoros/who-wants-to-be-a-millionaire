@@ -51,7 +51,7 @@
     </div>
 </nav>
 
-<main class="container" role="main">
+<main class="container">
     <g:layoutBody/>
 </main>
 </body>
