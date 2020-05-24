@@ -75,12 +75,11 @@ as soon as it is clicked. "Clear Answer" sets the button always go back to "Show
 I have experimented a lot with Javascript for these features and came up with very good results.
             
 #### Initial Question Catalogue
-Via a JSON-API questions can be loaded dynamically and users can directly open the app and play!
+Via an online JSON-API questions can be loaded dynamically (with fail-over on local questions) and users can directly open the app and play!
 
 #### Valid HTML and CSS
 Every HTML and CSS page has been validated with "https://validator.w3.org/nu/" and contains no errors anymore. 
 The moderator view was the most difficult view to provide without errors.
-            
             
 
 ## Project grading 
