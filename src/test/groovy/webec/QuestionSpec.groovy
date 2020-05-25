@@ -6,9 +6,11 @@ import spock.lang.Specification
 class QuestionSpec extends Specification implements DomainUnitTest<Question> {
 
     def setup() {
+        // empty
     }
 
     def cleanup() {
+        // empty
     }
 
     void "questionText cannot be null or blank"() {

@@ -52,8 +52,12 @@ class QuestionServiceSpec extends Specification implements ServiceUnitTest<Quest
         def list
         int count = 0
         Set<Question> questionSet
+
         while(count < 100) {
+            when: 'unique set requested'
             list = service.uniqueQuestionSet(50)
+
+            then: 'every question unique'
             questionSet = new HashSet(list)
             if(questionSet.size() < list.size()) {
                 //there are duplicates
@@ -61,16 +65,8 @@ class QuestionServiceSpec extends Specification implements ServiceUnitTest<Quest
             }
             count++
         }
-        assert true
-
-    }
-
-    void "test unique question set is shuffled"() {
+        // no duplicates found
         assert true
     }
 
-    void "test all() returns all questions"() {
-
-        assert true
-    }
 }

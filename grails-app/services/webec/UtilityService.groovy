@@ -3,7 +3,9 @@ package webec
 import groovy.json.JsonSlurper
 import org.apache.commons.lang.StringEscapeUtils
 
+import grails.gorm.transactions.Transactional
 
+@Transactional
 class UtilityService {
 
     /**
