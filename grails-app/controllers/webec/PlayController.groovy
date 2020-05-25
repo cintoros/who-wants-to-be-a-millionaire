@@ -58,6 +58,7 @@ class PlayController {
     }
 
     private Game newGame() {
+        lastQuestion = null;
         new Game(current: 0, questions: questionService.uniqueQuestionSet())
     }
 
