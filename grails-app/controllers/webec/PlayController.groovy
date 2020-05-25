@@ -66,7 +66,7 @@ class PlayController {
 
     private Game newGame() {
         lastQuestion = null;
-        new Game(current: 0, questions: questionService.uniqueQuestionSet(2)) //FIXME
+        new Game(current: 0, questions: questionService.uniqueQuestionSet())
     }
 
     def moderator() {

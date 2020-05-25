@@ -23,7 +23,7 @@ class BootStrap {
         assert UserRole.count() == 2
 
         // comment in dev questions for easier development
-        // UtilityService.loadDevelopmentQuestions()
+        //UtilityService.loadDevelopmentQuestions()
     }
 
 
