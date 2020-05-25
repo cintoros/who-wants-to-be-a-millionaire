@@ -20,7 +20,8 @@
 <div id="container" role="main">
     <div class="row">
         <div class="justify-content-center text-center">
-            <h1 class="display-2">Congratulations<sec:ifLoggedIn> <sec:username/>!</sec:ifLoggedIn> You won and are now a Millionaire!</h1>
+            <h1 class="display-2">Congratulations<sec:ifLoggedIn> <sec:username/>!</sec:ifLoggedIn></h1>
+            <h1 class="display-2">You won and are now a Millionaire!</h1>
 
             <div class="img-hover" title="Play again!">
                 <a href="/play">

@@ -9,10 +9,11 @@ function toggleVisibility(questionId) {
     correctAnswer.classList.toggle(token);
 
     let showHideButton = document.getElementById("show-hide-button" + questionId);
+
     if (showHideButton.innerHTML === "Show Answer") {
-        showHideButton.innerHTML = "Hide Answer"
-    } else {
-        showHideButton.innerHTML = "Show Answer"
+        showHideButton.innerHTML = "Hide Answer";
+    } else if(showHideButton.innerHTML === "Hide Answer") {
+        showHideButton.innerHTML = "Show Answer";
     }
 }
 
