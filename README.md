@@ -80,11 +80,14 @@ I have experimented a lot with Javascript for these features and came up with ve
             
 #### Initial Question Catalogue
 Via an online JSON-API questions can be loaded dynamically (with fail-over on local questions) and users can directly open the app and play!
+You can configure your API questions from "https://opentdb.com/api_config.php". Select a fair number of questions. Question Type: Multiple Choice. Encoding: Default.  
+Generate URL and pass it as param to BootStrap.groovy loadProductionQuestions.
+
+![](apiconfig.png)
 
 #### Valid HTML and CSS
 Every HTML and CSS page has been validated with "https://validator.w3.org/nu/" and contains no errors anymore. 
 The moderator view was the most difficult view to provide without errors.
             
-
 ## Project grading 
 < to be filled by lecturer>
