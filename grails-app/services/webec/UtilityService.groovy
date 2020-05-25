@@ -57,6 +57,8 @@ class UtilityService {
      * Inserts dev questions into db.
      */
     static void loadDevelopmentQuestions() {
+        println("Loading dev questions ...")
+
         save(new Question(questionText: "A?", correct: "A", second: "second", third: "third", fourth: "fourth"))
         save(new Question(questionText: "B?", correct: "B", second: "second", third: "third", fourth: "fourth"))
         save(new Question(questionText: "C?", correct: "C", second: "second", third: "third", fourth: "fourth"))

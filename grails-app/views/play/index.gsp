@@ -18,7 +18,9 @@
 <div class="col">
     <div id="shuffle">
         <h1 class="display-4">Play the game!</h1>
+
         <h1>${game.current + 1}. Question: ${game.questions.get(game.current).questionText}</h1>
+
         <div id="correct-answer" class="card list-group-item-action col"
              onclick="toggleSelectedAnswer('correct-answer')">
             <div class="card-body">
@@ -26,17 +28,23 @@
             </div>
         </div>
 
-        <div id="wrong-answer1" class="card list-group-item-action col" onclick="toggleSelectedAnswer('wrong-answer1')">
-            <div class="card-body">
-                <h5 class="card-title">${game.questions.get(game.current).second}</h5>
+        <g:if test="${game.questions.get(game.current).second != null}">
+            <div id="wrong-answer1" class="card list-group-item-action col"
+                 onclick="toggleSelectedAnswer('wrong-answer1')">
+                <div class="card-body">
+                    <h5 class="card-title">${game.questions.get(game.current).second}</h5>
+                </div>
             </div>
-        </div>
+        </g:if>
 
-        <div id="wrong-answer2" class="card list-group-item-action col" onclick="toggleSelectedAnswer('wrong-answer2')">
-            <div class="card-body">
-                <h5 class="card-title">${game.questions.get(game.current).third}</h5>
+        <g:if test="${game.questions.get(game.current).third != null}">
+            <div id="wrong-answer2" class="card list-group-item-action col"
+                 onclick="toggleSelectedAnswer('wrong-answer2')">
+                <div class="card-body">
+                    <h5 class="card-title">${game.questions.get(game.current).third}</h5>
+                </div>
             </div>
-        </div>
+        </g:if>
 
         <div id="wrong-answer3" class="card list-group-item-action col" onclick="toggleSelectedAnswer('wrong-answer3')">
             <div class="card-body">
@@ -49,9 +57,10 @@
     <div class="card list-group-item-action">
         <g:if test="${!game.isJokerUsed}">
             <button id="joker" type="button" class="btn btn-warning"
-                    onclick="removeTwoWrongAnswers('wrong-answer1', 'wrong-answer2');">50/50 Joker</button>
+                    onclick="callControllerWithJoker();">50/50 Joker</button>
         </g:if>
-        <button disabled="disabled" id="confirm-button" type="button" class="btn btn-secondary" onclick="callControllerWithSelectedAnswer()">Click on an Answer</button>
+        <button disabled="disabled" id="confirm-button" type="button" class="btn btn-secondary"
+                onclick="callControllerWithSelectedAnswer()">Click on an Answer</button>
     </div>
 
     <script>

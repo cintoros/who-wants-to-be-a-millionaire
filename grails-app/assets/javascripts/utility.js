@@ -24,6 +24,10 @@ function callControllerWithSelectedAnswer() {
     window.location = '/play?answer=' + answer + '&joker=' + jokerUsed
 }
 
+function callControllerWithJoker() {
+    window.location = '/play?joker=true'
+}
+
 /**
  * Toggles the selected answer to be displayed and sets the answer field of this class
  *

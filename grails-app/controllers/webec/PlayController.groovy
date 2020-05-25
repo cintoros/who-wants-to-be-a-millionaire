@@ -1,6 +1,8 @@
 package webec
 
 class PlayController {
+
+    def playService
     def questionService
     Game game
     Question lastQuestion
@@ -21,12 +23,21 @@ class PlayController {
         String answer = params.get("answer")
         String joker = params.get("joker")
 
-        if (answer == null || answer.isEmpty()) {
+        if ((answer == null || answer.isEmpty()) && joker == null) {
             game = newGame()
         } else {
             if(game == null || game.questions == null) {
                 // start new game
                 redirect(uri:'/')
+                return
+            }
+
+            if (!game.isJokerUsed && joker == "true") {
+                game.isJokerUsed = true
+
+                Question question = playService.removeTwoWrongAnswersFromQuestion(game.questions[game.current].id)
+                game.questions.set(game.current, question)
+                render(view: 'index', model: [game: game])
                 return
             }
 
@@ -37,10 +48,6 @@ class PlayController {
             } else {
                 // won, lost logic
                 def correct = currentQuestion.correct
-                if (!game.isJokerUsed && joker == "true") {
-                    game.isJokerUsed = true
-                }
-
                 if (answer == correct) {
                     // given answer was correct
                     game.current++ // go to next question
@@ -59,7 +66,7 @@ class PlayController {
 
     private Game newGame() {
         lastQuestion = null;
-        new Game(current: 0, questions: questionService.uniqueQuestionSet())
+        new Game(current: 0, questions: questionService.uniqueQuestionSet(2)) //FIXME
     }
 
     def moderator() {
