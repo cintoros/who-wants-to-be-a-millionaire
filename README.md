@@ -7,6 +7,9 @@ Matriculation Number: 17-549-981
 Um sich einen gemütlichen Spieleabend in der Familie machen zu können, 
 sind Quizzes immer etwas tolles. 
 
+![Startpage](/startpage.png=1280x720)
+![Gamepage](/gamepage.png=1280x720)
+
 Die Idee wäre, dass ein Spiele-Moderator sich viele Fragen anzeigen lassen kann, die er dann anderen Personen vorlesen kann. 
 Dabei sieht er vier Antwortmöglichkeiten und die richtige Lösung. Der Moderator teilt den Spielern dann mündlich mit, ob sie die 
 richtige Antwort gewählt haben. 
