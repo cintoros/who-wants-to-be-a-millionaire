@@ -39,7 +39,7 @@ function toggleSelectedAnswer(elementId) {
     const highlight = 'list-group-item-primary';
 
     const confirmButton = document.getElementById("confirm-button");
-    confirmButton.classList.remove("disabled");
+    confirmButton.disabled = false;
     confirmButton.classList.remove("btn-secondary");
     confirmButton.classList.add("btn-success");
     confirmButton.innerHTML = "Confirm"
@@ -58,9 +58,9 @@ function toggleSelectedAnswer(elementId) {
         document.getElementById(wrong3).classList.remove(highlight);
     }
 
-    let x = document.getElementById(elementId);
-    x.classList.add(highlight);
-    answer = x.innerText;
+    let selectedAnswer = document.getElementById(elementId);
+    selectedAnswer.classList.add(highlight);
+    answer = selectedAnswer.innerText;
 }
 
 /**
@@ -115,11 +115,11 @@ function markAsCorrectAnswer(questionId) {
 }
 
 /**
- * Shuffles all question answers (must be a-tags) within the specified question id
+ * Shuffles all question answers (must be div-tags) within the specified question id
  * @param questionId the question id
  */
 function shuffleQuestionAnswers(questionId) {
-    shuffle(document.querySelectorAll('#shuffle' + questionId + '> a'));
+    shuffle(document.querySelectorAll('#shuffle' + questionId + '> div'));
 }
 
 /**
