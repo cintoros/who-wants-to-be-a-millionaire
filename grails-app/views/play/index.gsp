@@ -51,7 +51,7 @@
             <button id="joker" type="button" class="btn btn-warning"
                     onclick="removeTwoWrongAnswers('wrong-answer1', 'wrong-answer2');">50/50 Joker</button>
         </g:if>
-        <button type="button" class="btn btn-success" onclick="callControllerWithSelectedAnswer()">Confirm</button>
+        <button disabled="disabled" id="confirm-button" type="button" class="btn btn-secondary" onclick="callControllerWithSelectedAnswer()">Click on an Answer</button>
     </div>
 
     <script>

@@ -4,7 +4,9 @@
  */
 function toggleVisibility(questionId) {
     let correctAnswer = document.getElementById("correct-answer" + questionId);
-    correctAnswer.classList.toggle('list-group-item-success');
+    const token = 'list-group-item-success';
+
+    correctAnswer.classList.toggle(token);
 
     let showHideButton = document.getElementById("show-hide-button" + questionId);
     if (showHideButton.innerHTML === "Show Answer") {
@@ -23,6 +25,10 @@ function callControllerWithSelectedAnswer() {
 
 /**
  * Toggles the selected answer to be displayed and sets the answer field of this class
+ *
+ * Additionally it enables the confirm button,
+ * changes its styling and its text to "Confirm".
+ *
  *  @param elementId the html id of the tag
  */
 function toggleSelectedAnswer(elementId) {
@@ -30,8 +36,13 @@ function toggleSelectedAnswer(elementId) {
     const wrong1 = "wrong-answer1";
     const wrong2 = "wrong-answer2";
     const wrong3 = "wrong-answer3";
-
     const highlight = 'list-group-item-primary';
+
+    const confirmButton = document.getElementById("confirm-button");
+    confirmButton.classList.remove("disabled");
+    confirmButton.classList.remove("btn-secondary");
+    confirmButton.classList.add("btn-success");
+    confirmButton.innerHTML = "Confirm"
 
     document.getElementById(correct).classList.remove(highlight);
 
@@ -87,7 +98,7 @@ function clearQuestion(questionId) {
     document.getElementById(wrong2).classList.remove('list-group-item-danger');
     document.getElementById(wrong3).classList.remove('list-group-item-danger');
 
-    let showHideButton = document.getElementById("show-hide-button" + (questionId+1));
+    let showHideButton = document.getElementById("show-hide-button" + (questionId + 1));
     if (showHideButton.innerHTML === "Hide Answer") {
         showHideButton.innerHTML = "Show Answer";
     }
@@ -99,6 +110,8 @@ function markAsWrongAnswer(questionId) {
 
 function markAsCorrectAnswer(questionId) {
     document.getElementById("correct-answer" + questionId).classList.add('list-group-item-success');
+    let showHideButton = document.getElementById("show-hide-button" + (questionId + 1));
+    // showHideButton.innerHTML = "Hide Answer";
 }
 
 /**
