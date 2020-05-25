@@ -10,10 +10,10 @@ function toggleVisibility(questionId) {
 
     let showHideButton = document.getElementById("show-hide-button" + questionId);
 
-    if (showHideButton.innerHTML === "Show Answer") {
-        showHideButton.innerHTML = "Hide Answer";
-    } else if (showHideButton.innerHTML === "Hide Answer") {
-        showHideButton.innerHTML = "Show Answer";
+    if (showHideButton.innerText === "Show Answer") {
+        showHideButton.innerText = "Hide Answer";
+    } else if (showHideButton.innerText === "Hide Answer") {
+        showHideButton.innerText = "Show Answer";
     }
 }
 

@@ -19,6 +19,12 @@
 
 <div class="card">
     <div class="card-body">
+        %{--
+          Developer's note:
+          In "Be the Moderator" mode the correct answers are visible in the HTML DOM with F12.
+          Purpose: This is efficient as everything is handled on the client.
+          There is no need to request the correct answer from the server in this moderator setting.
+        --}%
         <g:each status="i" var="question" in="${questions}">
             <h1 class="card-text">Question ${i + 1}: ${question.questionText}</h1>
 
