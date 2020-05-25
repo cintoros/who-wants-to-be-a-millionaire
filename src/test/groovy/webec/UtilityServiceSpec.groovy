@@ -5,7 +5,7 @@ import grails.testing.services.ServiceUnitTest
 import grails.validation.ValidationException
 import spock.lang.Specification
 
-class UtilityServiceSpec extends Specification implements ServiceUnitTest<UtilityService>, DataTest {
+class UtilityServiceSpec extends Specification implements DataTest, ServiceUnitTest<UtilityService> {
 
     def setupSpec() {
         mockDomain Question
@@ -41,7 +41,32 @@ class UtilityServiceSpec extends Specification implements ServiceUnitTest<Utilit
         Question.all.size() == 50
     }
 
-    void 'test expect NullPointerException on null question'() {
+    void 'test expect loadProdQuestions returns true on other questions from OpentDB'() {
+        given:
+        def mock = Mock(UtilityService)
+
+        when:
+        def success = mock.loadProductionQuestions("https://opentdb.com/api.php?amount=10&category=22&difficulty=easy&type=multiple")
+
+        then:
+        Question.all.size() == 10
+        assert success
+    }
+
+    void 'test expect loadProdQuestions returns false on API error'() {
+        given:
+        def mock = Mock(UtilityService)
+
+        when:
+        def success = mock.loadProductionQuestions("InvalidURL")
+
+        then:
+        Question.all.size() == 50 // the local 50 questions remain
+        assert !success
+    }
+
+
+        void 'test expect NullPointerException on null question'() {
         given:
         Question question = null
         def mock = Mock(UtilityService)

@@ -1,10 +1,12 @@
 package webec
 
+import grails.gorm.transactions.Rollback
 import grails.testing.mixin.integration.Integration
 import grails.testing.services.ServiceUnitTest
 import spock.lang.Specification
 
 @Integration
+@Rollback
 class QuestionServiceSpec extends Specification implements ServiceUnitTest<QuestionService> {
 
     def setup() {
