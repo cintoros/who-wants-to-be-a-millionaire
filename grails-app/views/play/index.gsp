@@ -10,7 +10,7 @@
 <head>
     <meta name="layout" content="main"/>
     <asset:javascript src="utility.js"/>
-    <title>Play as Player</title>
+    <title>Play the Game</title>
 </head>
 
 <body>
@@ -21,16 +21,16 @@
 
         <h1>${game.current + 1}. Question: ${game.questions.get(game.current).questionText}</h1>
 
-        <div id="correct-answer" class="card list-group-item-action col"
-             onclick="toggleSelectedAnswer('correct-answer')">
+        <div id="answer1" class="card list-group-item-action col"
+             onclick="toggleSelectedAnswer('answer1')">
             <div class="card-body">
                 <h5 class="card-title">${game.questions.get(this.game.current).correct}</h5>
             </div>
         </div>
 
         <g:if test="${game.questions.get(game.current).second != null}">
-            <div id="wrong-answer1" class="card list-group-item-action col"
-                 onclick="toggleSelectedAnswer('wrong-answer1')">
+            <div id="answer2" class="card list-group-item-action col"
+                 onclick="toggleSelectedAnswer('answer2')">
                 <div class="card-body">
                     <h5 class="card-title">${game.questions.get(game.current).second}</h5>
                 </div>
@@ -38,15 +38,15 @@
         </g:if>
 
         <g:if test="${game.questions.get(game.current).third != null}">
-            <div id="wrong-answer2" class="card list-group-item-action col"
-                 onclick="toggleSelectedAnswer('wrong-answer2')">
+            <div id="answer3" class="card list-group-item-action col"
+                 onclick="toggleSelectedAnswer('answer3')">
                 <div class="card-body">
                     <h5 class="card-title">${game.questions.get(game.current).third}</h5>
                 </div>
             </div>
         </g:if>
 
-        <div id="wrong-answer3" class="card list-group-item-action col" onclick="toggleSelectedAnswer('wrong-answer3')">
+        <div id="answer4" class="card list-group-item-action col" onclick="toggleSelectedAnswer('answer4')">
             <div class="card-body">
                 <h5 class="card-title">${game.questions.get(game.current).fourth}</h5>
             </div>

@@ -12,20 +12,30 @@ function toggleVisibility(questionId) {
 
     if (showHideButton.innerHTML === "Show Answer") {
         showHideButton.innerHTML = "Hide Answer";
-    } else if(showHideButton.innerHTML === "Hide Answer") {
+    } else if (showHideButton.innerHTML === "Hide Answer") {
         showHideButton.innerHTML = "Show Answer";
     }
 }
 
-let jokerUsed = 'false';
 let answer = '';
 
 function callControllerWithSelectedAnswer() {
-    window.location = '/play?answer=' + answer + '&joker=' + jokerUsed
+    window.location = '/play?answer=' + answer
 }
 
 function callControllerWithJoker() {
     window.location = '/play?joker=true'
+}
+
+/**
+ * Removes a specified class from a specified element
+ * @param elementId the element id
+ * @param classToRemove the class to remove
+ */
+function removeClass(elementId, classToRemove) {
+    if (document.getElementById(elementId) !== null) {
+        document.getElementById(elementId).classList.remove(classToRemove);
+    }
 }
 
 /**
@@ -37,10 +47,10 @@ function callControllerWithJoker() {
  *  @param elementId the html id of the tag
  */
 function toggleSelectedAnswer(elementId) {
-    const correct = "correct-answer";
-    const wrong1 = "wrong-answer1";
-    const wrong2 = "wrong-answer2";
-    const wrong3 = "wrong-answer3";
+    const answer1 = "answer1";
+    const answer2 = "answer2";
+    const answer3 = "answer3";
+    const answer4 = "answer4";
     const highlight = 'list-group-item-primary';
 
     const confirmButton = document.getElementById("confirm-button");
@@ -49,40 +59,14 @@ function toggleSelectedAnswer(elementId) {
     confirmButton.classList.add("btn-success");
     confirmButton.innerHTML = "Confirm"
 
-    document.getElementById(correct).classList.remove(highlight);
-
-    if (document.getElementById(wrong1) !== null) {
-        document.getElementById(wrong1).classList.remove(highlight);
-    }
-
-    if (document.getElementById(wrong2) !== null) {
-        document.getElementById(wrong2).classList.remove(highlight);
-    }
-
-    if (document.getElementById(wrong3) !== null) {
-        document.getElementById(wrong3).classList.remove(highlight);
-    }
+    removeClass(answer1, highlight);
+    removeClass(answer2, highlight);
+    removeClass(answer3, highlight);
+    removeClass(answer4, highlight);
 
     let selectedAnswer = document.getElementById(elementId);
     selectedAnswer.classList.add(highlight);
     answer = selectedAnswer.innerText;
-}
-
-/**
- * Removes two wrong answers.
- * Used for the 50% joker.
- *
- * Sets jokerUsed field to true.
- *
- * @param answer1 the answer to be removed
- * @param answer2 the answer to be removed
- */
-function removeTwoWrongAnswers(answer1, answer2) {
-    document.getElementById(answer1).remove();
-    document.getElementById(answer2).remove();
-    document.getElementById('joker').remove();
-
-    jokerUsed = 'true'
 }
 
 /**
@@ -98,10 +82,14 @@ function clearQuestion(questionId) {
     const wrong2 = "wrong-answer" + (questionId + 1) + (questionId + 1);
     const wrong3 = "wrong-answer" + (questionId + 1) + (questionId + 2);
 
-    document.getElementById(correct).classList.remove('list-group-item-success');
-    document.getElementById(wrong1).classList.remove('list-group-item-danger');
-    document.getElementById(wrong2).classList.remove('list-group-item-danger');
-    document.getElementById(wrong3).classList.remove('list-group-item-danger');
+    removeClass(correct, 'list-group-item-success')
+    removeClass(wrong1, 'list-group-item-danger')
+    removeClass(wrong2, 'list-group-item-danger')
+    removeClass(wrong3, 'list-group-item-danger')
+    // document.getElementById(correct).classList.remove('list-group-item-success');
+    // document.getElementById(wrong1).classList.remove('list-group-item-danger');
+    // document.getElementById(wrong2).classList.remove('list-group-item-danger');
+    // document.getElementById(wrong3).classList.remove('list-group-item-danger');
 
     let showHideButton = document.getElementById("show-hide-button" + (questionId + 1));
     if (showHideButton.innerHTML === "Hide Answer") {
