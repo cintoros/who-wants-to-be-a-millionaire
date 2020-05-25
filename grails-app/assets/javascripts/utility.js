@@ -17,6 +17,7 @@ function toggleVisibility(questionId) {
     }
 }
 
+// the selected user answer
 let answer = '';
 
 function callControllerWithSelectedAnswer() {
@@ -86,17 +87,16 @@ function clearQuestion(questionId) {
     removeClass(wrong1, 'list-group-item-danger')
     removeClass(wrong2, 'list-group-item-danger')
     removeClass(wrong3, 'list-group-item-danger')
-    // document.getElementById(correct).classList.remove('list-group-item-success');
-    // document.getElementById(wrong1).classList.remove('list-group-item-danger');
-    // document.getElementById(wrong2).classList.remove('list-group-item-danger');
-    // document.getElementById(wrong3).classList.remove('list-group-item-danger');
 
     let showHideButton = document.getElementById("show-hide-button" + (questionId + 1));
     if (showHideButton.innerHTML === "Hide Answer") {
         showHideButton.innerHTML = "Show Answer";
     }
 }
-
+/**
+ * Highlight the wrong Answer for the moderator
+ * @param questionId the question id to highlight
+ */
 function markAsWrongAnswer(questionId) {
     document.getElementById("wrong-answer" + questionId).classList.add('list-group-item-danger');
 }
