@@ -54,7 +54,7 @@ I would like to point out a few points that I have implemented well in terms of 
 If a player looses the game, presses the back button to "reanswer" his question, the anti cheat detection get's triggered and the game is aborted.
 
 #### Zoom Logo
-Who wants to be a millionaire logo on the home page has an "on hover" zoom animation. 
+Who Wants to be a millionaire logo on the home page has an "on hover" zoom animation. 
 Actually this has taken a lot of time, but it was worth it, because the page looks less static now.
             
 #### Design and layout
