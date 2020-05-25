@@ -67,7 +67,7 @@ function toggleSelectedAnswer(elementId) {
  * Removes two wrong answers.
  * Used for the 50% joker.
  *
- * Sets jokerUser field to true.
+ * Sets jokerUsed field to true.
  *
  * @param answer1 the answer to be removed
  * @param answer2 the answer to be removed
@@ -108,10 +108,14 @@ function markAsWrongAnswer(questionId) {
     document.getElementById("wrong-answer" + questionId).classList.add('list-group-item-danger');
 }
 
+/**
+ * Highlight the correct Answer for the moderator
+ * @param questionId the question id to highlight
+ */
 function markAsCorrectAnswer(questionId) {
     document.getElementById("correct-answer" + questionId).classList.add('list-group-item-success');
-    let showHideButton = document.getElementById("show-hide-button" + (questionId + 1));
-    // showHideButton.innerHTML = "Hide Answer";
+    let showHideButton = document.getElementById("show-hide-button" + questionId);
+    showHideButton.innerHTML = "Hide Answer"
 }
 
 /**
