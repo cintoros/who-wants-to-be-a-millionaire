@@ -17,4 +17,22 @@ class PlayService {
         question
     }
 
+    /**
+     * Finds question by id.
+     *
+     * Method could be used for testing purposes.
+     *
+     * @param questionId the question id
+     * @return the question or a default question
+     */
+    Question findQuestionOrDefault(Long questionId) {
+        Question question = Question.findById(questionId)
+        if(question == null) {
+            new Question(correct: "A", questionText: "QQQ", second: "XXX", third: "YYY", fourth: "ZZZ")
+        }
+        else {
+            question
+        }
+    }
+
 }
