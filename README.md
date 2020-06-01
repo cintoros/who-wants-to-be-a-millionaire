@@ -93,7 +93,7 @@ The moderator view was the most difficult view to provide without errors.
 
 Very nice project, beautifully implemented!
 
-I enjoyed playing the game (and may daughters as well... :wink:)
+I enjoyed playing the game (and my daughters as well... :wink:)
 
 Remarks:
 * Use a logging framework instead of `println`, you will gain flexibility regarding format, output, ...
