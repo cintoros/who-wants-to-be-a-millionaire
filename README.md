@@ -86,8 +86,18 @@ Generate URL and pass it as param to BootStrap.groovy loadProductionQuestions.
 ![](apiconfig.png)
 
 #### Valid HTML and CSS
-Every HTML and CSS page has been validated with "https://validator.w3.org/nu/" and contains no errors anymore. 
+Every HTML and CSS page has been validated with https://validator.w3.org/nu/ and contains no errors anymore. 
 The moderator view was the most difficult view to provide without errors.
             
 ## Project grading 
-< to be filled by lecturer>
+
+Very nice project, beautifully implemented!
+
+I enjoyed playing the game (and may daughters as well... :wink:)
+
+Remarks:
+* Use a logging framework instead of `println`, you will gain flexibility regarding format, output, ...
+
+Kindly Refer to [GradedExercise.xlsx](GradedExercise.xlsx) for grading details.
+
+Grade: **6.0**
