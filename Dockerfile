@@ -1,6 +1,6 @@
 #For building a full gradle docker is needed becasue grails has some quirks.
 # the docker file is organized in a way so that build dependencies are cached.
-FROM amazoncorretto:11-alpine AS builder
+FROM public.ecr.aws/w1m2m2a3/amazoncorretto:11 AS builder
 WORKDIR /app
 COPY gradle gradle
 COPY gradlew .
@@ -9,7 +9,7 @@ COPY grailsw .
 COPY grails-wrapper.jar .
 COPY build.gradle .
 COPY gradle.properties .
-RUN apk update && apk add bash
+#RUN apk update && apk add bash
 RUN ./grailsw --version
 COPY . .
 RUN ./grailsw assemble --no-daemon
