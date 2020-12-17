@@ -13,7 +13,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker pull 609259011298.dkr.ecr.us-east-1.amazonaws.com/amazoncorretto:11-alpine
+      - docker pull public.ecr.aws/w1m2m2a3/amazoncorretto:11
       - docker build -t $REPOSITORY_URI:latest .
       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
   post_build:
