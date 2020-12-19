@@ -1,5 +1,3 @@
-#For building a full gradle docker is needed becasue grails has some quirks.
-# the docker file is organized in a way so that build dependencies are cached.
 FROM public.ecr.aws/w1m2m2a3/amazoncorretto:11 AS builder
 WORKDIR /app
 COPY gradle gradle
