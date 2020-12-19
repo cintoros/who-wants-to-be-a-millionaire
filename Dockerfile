@@ -14,5 +14,5 @@ RUN ./grailsw test-app --no-daemon
 RUN ls build/libs/
 FROM public.ecr.aws/w1m2m2a3/amazoncorretto:11
 COPY --from=builder /app/build/libs/app-0.1.jar app.jar
-EXPOSE 9876
+EXPOSE 80
 ENTRYPOINT ["java","-jar","app.jar"]
