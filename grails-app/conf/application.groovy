@@ -35,3 +35,4 @@ grails.plugin.springsecurity.filterChain.chainMap = [
 // logout and redirect
 grails.plugin.springsecurity.logout.postOnly = false
 grails.plugin.springsecurity.logout.afterLogoutUrl = "/"
+grails.plugin.springsecurity.useBasicAuth = true
