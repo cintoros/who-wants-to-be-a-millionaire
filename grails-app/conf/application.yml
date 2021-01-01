@@ -145,7 +145,7 @@ environments:
       dbCreate: update
       password: EliasCorrado98
       username: root
-      url: jdbc:mysql://wwm.cluster-c2u8hnvfb6ba.us-east-1.rds.amazonaws.com/wwm
+      url: jdbc:mysql://wwm.cluster-cb3vidq0exql.us-east-1.rds.amazonaws.com/wwm
       driverClassName: org.mariadb.jdbc.Driver
       properties:
         jmxEnabled: true
