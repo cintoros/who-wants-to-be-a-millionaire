@@ -11,10 +11,10 @@ class QuestionService {
      * If there are not enough questions in the database, or any at all,
      * an empty list is returned.
      *
-     * @param size the size of the questions set, default value: 15
+     * @param size the size of the questions set, default value: 5
      * @return a list of unique and random questions
      */
-    def uniqueQuestionSet(int size = 15) {
+    def uniqueQuestionSet(int size = 5) {
         def questions = Question.all
         if (questions.size() < size) {
             Collections.shuffle(questions);

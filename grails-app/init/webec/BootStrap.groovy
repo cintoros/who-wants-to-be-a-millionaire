@@ -4,7 +4,7 @@ class BootStrap {
     def utilityService
     def init = { servletContext ->
         // comment out production questions for easier development
-        if (Question.count() <= 0) {
+        if (Question.count() <= 50) {
             utilityService.loadProductionQuestions()
         }
         if (User.count() <= 0) {
